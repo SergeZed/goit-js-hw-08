@@ -12,6 +12,9 @@ const feedbackObject = {
 	message,
 };
 
+localStorage.clear();
+form.reset();
+
 const getStorageData = function () {
 	const retrievedObject = localStorage.getItem('feedback-form-state');
 	const result = retrievedObject ? JSON.parse(retrievedObject) : feedbackObject;
