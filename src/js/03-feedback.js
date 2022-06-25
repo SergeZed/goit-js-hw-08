@@ -12,8 +12,8 @@ const feedbackObject = {
 	message,
 };
 
-localStorage.clear();
-form.reset();
+// localStorage.clear();
+// form.reset();
 
 const getStorageData = function () {
 	const retrievedObject = localStorage.getItem('feedback-form-state');
@@ -52,7 +52,9 @@ const submitHandler = function (e) {
 	e.preventDefault();
 	console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
 	localStorage.clear();
-	form.reset();
+	// form.reset();
+	emailEl.value = '';
+	messageEl.value = '';
 };
 // console.log(throttle)
 emailEl.addEventListener('input', throttle(inputEmailHandler, 1500));
